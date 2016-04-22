@@ -5,9 +5,9 @@
 ## Install
 go get github.com/jhonsky/restfulApiTest
 
-Use RESTful lib:[![go-json-rest](https://github.com/ant0ine/go-json-rest.git)]
-Use postgreSql lib:[![lib-pq](https://github.com/lib/pq.git)]
-Use database postgreSql
+Use RESTful lib:[![go-json-rest](https://github.com/ant0ine/go-json-rest.git)].
+Use postgreSql lib:[![lib-pq](https://github.com/lib/pq.git)].
+Use database postgreSql.
 
 The following is database design:
 DBName=tantan
