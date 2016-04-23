@@ -3,7 +3,7 @@
 *This is a RESTful JSON API test in golang.*
 
 ## Install
-go get github.com/jhonsky/restfulApiTest
+go get github.com/jhonsky/restfulApi
 
 Use RESTful lib:[![go-json-rest](https://github.com/ant0ine/go-json-rest.git)].
 
