@@ -30,15 +30,14 @@ type RelationshipType struct {
 	Type string
 }
 
-//func (r *Relationship) ConvertState() {
-//	switch r.State {
-//	case "1":
-//		r.State = "disliked"
-//	case "2":
-//		r.State = "liked"
-//	case "3":
-//		r.State = "matched"
-//	default:
-//		r.State = "no relation"
-//	}
-//}
+type IsValid interface {
+	Valid() bool
+}
+
+func (u *User) Valid() bool {
+	return u.Id != "" && u.Name != ""
+}
+
+func (ut *Relationship) Valid() bool {
+	return ut.Id != "" && ut.State != ""
+}

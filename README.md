@@ -13,9 +13,13 @@ Use database postgreSql.
 
 
 The following is database design:
-
-DBName=tantan
-
+```
+host := "localhost"
+port := 5432
+dbID := "tantan"
+user := "postgres"
+pwd := "1111"
+```
 first table: tbl_user
 
 create tbl_user sql:
@@ -46,7 +50,7 @@ The following is examples.
 GET/users 
 List all users 
 Example: 
-$curl -XGET "http://localhost:80/users" 
+$curl -XGET "http://localhost:9090/users" 
 [
     {
         "id": "21341231231",
@@ -66,7 +70,7 @@ Create a user
 allowed fields: 
 name = string 
 Example: 
-$curl -XPOST -d '{"name":"Alice"}' "http://localhost:80/users" 
+$curl -XPOST -d '{"name":"Alice"}' "http://localhost:9090/users" 
 { 
 	"id": "11231244213", 
 	"name": "Alice" ,
@@ -77,7 +81,7 @@ $curl -XPOST -d '{"name":"Alice"}' "http://localhost:80/users"
 GET/users/:user_id/relationships 
 List a users all relationships 
 Example: 
-$curl -XGET "http://localhost:80/users/11231244213/relationships" 
+$curl -XGET "http://localhost:9090/users/11231244213/relationships" 
 [
     {
         "user_id": "222333444",
@@ -104,21 +108,21 @@ state = "liked"|"disliked"
 If two users have "liked" each other, then the state of the relationship is "matched" 
 Example: 
 $curl -XPUT -d '{"state":"liked"}' 
-"http://localhost:80/users/11231244213/relationships/21341231231" 
+"http://localhost:9090/users/11231244213/relationships/21341231231" 
 { 
 	"user_id": "21341231231", 
 	"state": "liked" ,
 	"type": "relationship" 
 } 
 $curl -XPUT -d '{"state":"liked"}' 
-"http://localhost:80/users/21341231231/relationships/11231244213" 
+"http://localhost:9090/users/21341231231/relationships/11231244213" 
 { 
 	"user_id": "11231244213", 
 	"state": "matched" ,
 	"type": "relationship" 
 } 
 $curl -XPUT -d '{"state":"disliked"}' 
-"http://localhost:80/users/21341231231/relationships/11231244213" 
+"http://localhost:9090/users/21341231231/relationships/11231244213" 
 { 
 	"user_id": "11231244213", 
 	"state": "disliked" ,
